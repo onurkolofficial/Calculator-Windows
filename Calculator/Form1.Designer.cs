@@ -31,142 +31,152 @@ namespace Calculator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dragPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.app_title = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.menuButton = new System.Windows.Forms.Button();
+            this.exitAppButton = new System.Windows.Forms.Button();
+            this.toolbar_title = new System.Windows.Forms.Label();
             this.appContentPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.valueText = new System.Windows.Forms.TextBox();
-            this.historyText = new System.Windows.Forms.TextBox();
-            this.calcButtonPanel = new System.Windows.Forms.Panel();
+            this.navigationPanel = new System.Windows.Forms.Panel();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.dragPanel.SuspendLayout();
             this.appContentPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.navigationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dragPanel
             // 
-            this.dragPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dragPanel.Controls.Add(this.button1);
-            this.dragPanel.Controls.Add(this.app_title);
+            this.dragPanel.Controls.Add(this.backButton);
+            this.dragPanel.Controls.Add(this.menuButton);
+            this.dragPanel.Controls.Add(this.exitAppButton);
+            this.dragPanel.Controls.Add(this.toolbar_title);
+            this.dragPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dragPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dragPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.dragPanel.Location = new System.Drawing.Point(0, 0);
             this.dragPanel.Name = "dragPanel";
-            this.dragPanel.Size = new System.Drawing.Size(338, 46);
+            this.dragPanel.Size = new System.Drawing.Size(350, 46);
             this.dragPanel.TabIndex = 1;
-            this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPanel_MouseDown);
+            this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toolbarScrollMouseDown);
             // 
-            // button1
+            // backButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 42);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.backButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Image = global::Calculator.Properties.AppResources.back_button;
+            this.backButton.Location = new System.Drawing.Point(46, 0);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(46, 46);
+            this.backButton.TabIndex = 3;
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Visible = false;
             // 
-            // app_title
+            // menuButton
             // 
-            this.app_title.AutoSize = true;
-            this.app_title.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.app_title.Location = new System.Drawing.Point(12, 9);
-            this.app_title.Name = "app_title";
-            this.app_title.Size = new System.Drawing.Size(103, 25);
-            this.app_title.TabIndex = 0;
-            this.app_title.Text = "APP_NAME";
+            this.menuButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuButton.FlatAppearance.BorderSize = 0;
+            this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton.Image = global::Calculator.Properties.AppResources.menu_button;
+            this.menuButton.Location = new System.Drawing.Point(0, 0);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(46, 46);
+            this.menuButton.TabIndex = 2;
+            this.menuButton.UseVisualStyleBackColor = true;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
+            // exitAppButton
+            // 
+            this.exitAppButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitAppButton.FlatAppearance.BorderSize = 0;
+            this.exitAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitAppButton.Image = global::Calculator.Properties.AppResources.close_button;
+            this.exitAppButton.Location = new System.Drawing.Point(304, 0);
+            this.exitAppButton.Name = "exitAppButton";
+            this.exitAppButton.Size = new System.Drawing.Size(46, 46);
+            this.exitAppButton.TabIndex = 2;
+            this.exitAppButton.UseVisualStyleBackColor = true;
+            this.exitAppButton.Click += new System.EventHandler(this.exitAppButton_Click);
+            // 
+            // toolbar_title
+            // 
+            this.toolbar_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolbar_title.AutoSize = true;
+            this.toolbar_title.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toolbar_title.Location = new System.Drawing.Point(52, 9);
+            this.toolbar_title.Name = "toolbar_title";
+            this.toolbar_title.Size = new System.Drawing.Size(150, 25);
+            this.toolbar_title.TabIndex = 0;
+            this.toolbar_title.Text = "TOOLBAR_NAME";
+            this.toolbar_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toolbarScrollMouseDown);
             // 
             // appContentPanel
             // 
-            this.appContentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.appContentPanel.Controls.Add(this.panel2);
-            this.appContentPanel.Controls.Add(this.calcButtonPanel);
-            this.appContentPanel.Location = new System.Drawing.Point(0, 49);
+            this.appContentPanel.Controls.Add(this.navigationPanel);
+            this.appContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.appContentPanel.Location = new System.Drawing.Point(0, 46);
             this.appContentPanel.Name = "appContentPanel";
-            this.appContentPanel.Size = new System.Drawing.Size(338, 401);
-            this.appContentPanel.TabIndex = 3;
+            this.appContentPanel.Size = new System.Drawing.Size(350, 454);
+            this.appContentPanel.TabIndex = 5;
+            this.appContentPanel.Click += new System.EventHandler(this.checkNavigationIsShowing);
             // 
-            // panel2
+            // navigationPanel
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.valueText);
-            this.panel2.Controls.Add(this.historyText);
-            this.panel2.Location = new System.Drawing.Point(3, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 88);
-            this.panel2.TabIndex = 4;
+            this.navigationPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.navigationPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.navigationPanel.Controls.Add(this.settingsButton);
+            this.navigationPanel.Location = new System.Drawing.Point(0, 0);
+            this.navigationPanel.Name = "navigationPanel";
+            this.navigationPanel.Size = new System.Drawing.Size(179, 454);
+            this.navigationPanel.TabIndex = 4;
             // 
-            // valueText
+            // settingsButton
             // 
-            this.valueText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.valueText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.valueText.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.valueText.Location = new System.Drawing.Point(12, 42);
-            this.valueText.Name = "valueText";
-            this.valueText.Size = new System.Drawing.Size(314, 32);
-            this.valueText.TabIndex = 1;
-            this.valueText.Text = "TEST";
-            this.valueText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // historyText
-            // 
-            this.historyText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.historyText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.historyText.Cursor = System.Windows.Forms.Cursors.Default;
-            this.historyText.Enabled = false;
-            this.historyText.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.historyText.Location = new System.Drawing.Point(12, 13);
-            this.historyText.Name = "historyText";
-            this.historyText.Size = new System.Drawing.Size(314, 16);
-            this.historyText.TabIndex = 0;
-            this.historyText.Text = "TEST";
-            this.historyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // calcButtonPanel
-            // 
-            this.calcButtonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.calcButtonPanel.Location = new System.Drawing.Point(3, 95);
-            this.calcButtonPanel.Name = "calcButtonPanel";
-            this.calcButtonPanel.Size = new System.Drawing.Size(332, 304);
-            this.calcButtonPanel.TabIndex = 3;
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsButton.FlatAppearance.BorderSize = 0;
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Image = global::Calculator.Properties.AppResources.app_settings_light;
+            this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsButton.Location = new System.Drawing.Point(0, 0);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(179, 32);
+            this.settingsButton.TabIndex = 0;
+            this.settingsButton.Text = "SETTINGS_TEXT";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(338, 450);
+            this.ClientSize = new System.Drawing.Size(350, 500);
             this.Controls.Add(this.appContentPanel);
             this.Controls.Add(this.dragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.dragPanel.ResumeLayout(false);
             this.dragPanel.PerformLayout();
             this.appContentPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.navigationPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel dragPanel;
-        private System.Windows.Forms.Label app_title;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label toolbar_title;
+        private System.Windows.Forms.Button exitAppButton;
         private System.Windows.Forms.Panel appContentPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox valueText;
-        private System.Windows.Forms.TextBox historyText;
-        private System.Windows.Forms.Panel calcButtonPanel;
+        private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.Button settingsButton;
+        public System.Windows.Forms.Panel navigationPanel;
+        private System.Windows.Forms.Button backButton;
     }
 }
 

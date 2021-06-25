@@ -12,12 +12,14 @@ namespace Calculator.Properties.Forms
 {
     public partial class CalculatorPage1 : Form
     {
-        public CalculatorPage1()
-        {
+        // Resources
+        private ComponentResourceManager langResource = new ComponentResourceManager(typeof(Locales.Language));
+
+        public CalculatorPage1(){
             InitializeComponent();
 
             // Set Texts
-            deleteButton.Text = Form1.langResource.GetString("del_text");
+            deleteButton.Text = langResource.GetString("del_text");
         }
     }
 }

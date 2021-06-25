@@ -126,4 +126,7 @@
   <data name="lang_name" xml:space="preserve">
     <value>Türkçe</value>
   </data>
+  <data name="settings_text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
 </root>

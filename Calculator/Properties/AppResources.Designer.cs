@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Calculator.Properties.Locales {
+namespace Calculator.Properties {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace Calculator.Properties.Locales {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Language {
+    internal class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Language() {
+        internal AppResources() {
         }
         
         /// <summary>
         ///   Bu sınıf tarafından kullanılan, önbelleğe alınmış ResourceManager örneğini döndürür.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Calculator.Properties.Locales.Language", typeof(Language).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Calculator.Properties.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Calculator.Properties.Locales {
         ///   CurrentUICulture özelliğini tüm kaynak aramaları için geçersiz kılar.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,38 +61,42 @@ namespace Calculator.Properties.Locales {
         }
         
         /// <summary>
-        ///   Calculator benzeri yerelleştirilmiş bir dize arar.
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        public static string app_name {
+        internal static System.Drawing.Bitmap app_settings_light {
             get {
-                return ResourceManager.GetString("app_name", resourceCulture);
+                object obj = ResourceManager.GetObject("app_settings_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   DEL benzeri yerelleştirilmiş bir dize arar.
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        public static string del_text {
+        internal static System.Drawing.Bitmap back_button {
             get {
-                return ResourceManager.GetString("del_text", resourceCulture);
+                object obj = ResourceManager.GetObject("back_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   English benzeri yerelleştirilmiş bir dize arar.
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        public static string lang_name {
+        internal static System.Drawing.Bitmap close_button {
             get {
-                return ResourceManager.GetString("lang_name", resourceCulture);
+                object obj = ResourceManager.GetObject("close_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Settings benzeri yerelleştirilmiş bir dize arar.
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        public static string settings_text {
+        internal static System.Drawing.Bitmap menu_button {
             get {
-                return ResourceManager.GetString("settings_text", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
