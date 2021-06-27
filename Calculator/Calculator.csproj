@@ -4,7 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+    <Authors>Onur Kol</Authors>
+    <Copyright>Onur Kol</Copyright>
+    <Description>Calculator Application for Windows.</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathParser.org-mXparser" Version="4.4.2" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\AppResources.Designer.cs">

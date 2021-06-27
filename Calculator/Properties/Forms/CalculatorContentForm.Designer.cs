@@ -48,6 +48,8 @@ namespace Calculator.Properties.Forms
             this.valueText.Size = new System.Drawing.Size(326, 32);
             this.valueText.TabIndex = 1;
             this.valueText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.valueText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valueText_KeyDown);
+            this.valueText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valueText_KeyPress);
             // 
             // historyText
             // 
@@ -57,17 +59,17 @@ namespace Calculator.Properties.Forms
             this.historyText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.historyText.Cursor = System.Windows.Forms.Cursors.Default;
             this.historyText.Enabled = false;
-            this.historyText.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.historyText.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.historyText.Location = new System.Drawing.Point(12, 16);
             this.historyText.Name = "historyText";
-            this.historyText.Size = new System.Drawing.Size(326, 16);
+            this.historyText.Size = new System.Drawing.Size(326, 20);
             this.historyText.TabIndex = 0;
             this.historyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // inputPanel
             // 
-            this.inputPanel.Controls.Add(this.valueText);
             this.inputPanel.Controls.Add(this.historyText);
+            this.inputPanel.Controls.Add(this.valueText);
             this.inputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.inputPanel.Location = new System.Drawing.Point(0, 0);
             this.inputPanel.Name = "inputPanel";
@@ -93,6 +95,7 @@ namespace Calculator.Properties.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CalculatorContentForm";
             this.Text = "CalculatorContentForm";
+            this.Click += new System.EventHandler(this.CalculatorContentForm_Click);
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
             this.ResumeLayout(false);

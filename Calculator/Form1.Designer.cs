@@ -119,7 +119,7 @@ namespace Calculator
             this.appContentPanel.Name = "appContentPanel";
             this.appContentPanel.Size = new System.Drawing.Size(350, 454);
             this.appContentPanel.TabIndex = 5;
-            this.appContentPanel.Click += new System.EventHandler(this.checkNavigationIsShowing);
+            this.appContentPanel.Click += new System.EventHandler(Form1.checkNavigationIsShowingHandler);
             // 
             // navigationPanel
             // 
@@ -137,6 +137,7 @@ namespace Calculator
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.settingsButton.FlatAppearance.BorderSize = 0;
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.settingsButton.Image = global::Calculator.Properties.AppResources.app_settings_light;
             this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settingsButton.Location = new System.Drawing.Point(0, 0);
@@ -144,6 +145,7 @@ namespace Calculator
             this.settingsButton.Size = new System.Drawing.Size(179, 32);
             this.settingsButton.TabIndex = 0;
             this.settingsButton.Text = "SETTINGS_TEXT";
+            this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 

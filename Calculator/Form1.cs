@@ -56,13 +56,13 @@ namespace Calculator
 
             // Hide Navigation
             navigationPanel.Visible = false;
-
             // Init App
             getMainPage();
         }
 
         private void Form1_Load(object sender, EventArgs e){
-            
+            // Focus Control
+            ActiveControl = calculatorMain.valueTextPublic;
         }
 
         // Get Calculator Main Page
@@ -142,16 +142,14 @@ namespace Calculator
             }
         }
 
-        
-
-        private void checkNavigationIsShowing(object sender, EventArgs e){
+        public static void checkNavigationIsShowingHandler(object sender, EventArgs e){
             if (showNavigationStart){
                 // Hide Navigation
                 showNavigationStart = false;
                 // Get Effect
                 Properties.Tools.Animation.Effect effect = Properties.Tools.Animation.Effect.Roll;
                 // Set Animation
-                Properties.Tools.Animation.Animate(navigationPanel, effect, 100, 360);
+                Properties.Tools.Animation.Animate(navigationPanelStatic, effect, 100, 360);
             }
         }
 
@@ -159,7 +157,7 @@ namespace Calculator
             // Open Settings
             getSettingsPage();
             // Dismiss Navigation
-            checkNavigationIsShowing(sender, e);
+            checkNavigationIsShowingHandler(sender, e);
         }
     }
 }

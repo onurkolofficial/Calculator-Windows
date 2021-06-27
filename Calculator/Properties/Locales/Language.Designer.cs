@@ -61,6 +61,15 @@ namespace Calculator.Properties.Locales {
         }
         
         /// <summary>
+        ///   About App benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        public static string about_app_text {
+            get {
+                return ResourceManager.GetString("about_app_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Calculator benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         public static string app_name {

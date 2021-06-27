@@ -12,15 +12,71 @@ namespace Calculator.Properties.Forms
 {
     public partial class CalculatorContentForm : Form
     {
+        public Panel closeNavigationPanelPublic;
+        public TextBox valueTextPublic, historyTextPublic;
         public CalculatorContentForm(){
             InitializeComponent();
             // Get Buttons
             getCalculatorButtonPage();
 
-            // Focus Input
-            ActiveControl = valueText;
+            // Init Public Elements
+            valueTextPublic = valueText;
+            historyTextPublic = historyText;
+
+            // Click Events
+            inputPanel.Click += new EventHandler(Form1.checkNavigationIsShowingHandler);
+            valueText.Click += new EventHandler(Form1.checkNavigationIsShowingHandler);
         }
 
+        private void CalculatorContentForm_Click(object sender, EventArgs e){
+            // Check Navigation Menu
+            Form1.checkNavigationIsShowingHandler(sender, e);
+        }
+
+        private void valueText_KeyPress(object sender, KeyPressEventArgs e){
+            String getKeyChar = e.KeyChar.ToString();
+
+            if (getKeyChar.Equals("+") ||
+                getKeyChar.Equals("-") || 
+                getKeyChar.Equals("/") ||
+                getKeyChar.Equals("*") ||
+                getKeyChar.Equals("%") ||
+                getKeyChar.Equals(".")){
+                if (valueText.TextLength > 0){
+                    if (getKeyChar.Equals("*")){
+                        e.Handled = true;
+                        // Convert * symbol to x
+                        valueText.Paste("x");
+                        //valueText.Text = valueText.Text.Replace("*", "");
+                        // Reset Variables for Next
+                        CalculatorPage1.PROCESS_RESET_COLON = true;
+                    }
+                    else if (getKeyChar.Equals(".")){
+                        e.Handled = true;
+                        if (CalculatorPage1.PROCESS_RESET_COLON){
+                            CalculatorPage1.PROCESS_RESET_COLON = false;
+                            valueText.Paste(".");
+                        }
+                    }
+                    else{
+                        e.Handled = false;
+                        // Reset Variables for Next
+                        CalculatorPage1.PROCESS_RESET_COLON = true;
+                    }
+                }
+                else
+                    e.Handled = true;
+            }
+            else if(!char.IsDigit(e.KeyChar) && 
+                !char.IsControl(e.KeyChar)){
+                e.Handled = true;
+            }
+        }
+
+        private void valueText_KeyDown(object sender, KeyEventArgs e){
+            if (e.KeyCode == Keys.Enter)
+                CalculatorPage1.equalsButtonClick(sender, e);
+        }
 
         private void getCalculatorButtonPage(){
             // Get Calculator Buttons
@@ -32,17 +88,6 @@ namespace Calculator.Properties.Forms
             calcButtonsPage1.Dock = DockStyle.Fill;
             // Show Button Forms
             calcButtonsPage1.Show();
-        }
-
-        private static void checkNavigationIsShowing(object sender, EventArgs e){
-            if (Form1.showNavigationStart){
-                // Hide Navigation
-                Form1.showNavigationStart = false;
-                // Get Effect
-                Tools.Animation.Effect effect = Tools.Animation.Effect.Roll;
-                // Set Animation
-                Tools.Animation.Animate(Form1.navigationPanelStatic, effect, 100, 360);
-            }
         }
     }
 }

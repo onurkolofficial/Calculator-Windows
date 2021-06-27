@@ -103,6 +103,7 @@ namespace Calculator.Properties.Forms
             this.additionButton.TabIndex = 20;
             this.additionButton.Text = "+";
             this.additionButton.UseVisualStyleBackColor = true;
+            this.additionButton.Click += new System.EventHandler(this.processButtonClick);
             // 
             // equalsButton
             // 
@@ -127,6 +128,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey0.TabIndex = 18;
             this.buttonKey0.Text = "0";
             this.buttonKey0.UseVisualStyleBackColor = true;
+            this.buttonKey0.Click += new System.EventHandler(this.buttonKey0_Click);
             // 
             // colonButton
             // 
@@ -139,6 +141,7 @@ namespace Calculator.Properties.Forms
             this.colonButton.TabIndex = 17;
             this.colonButton.Text = ".";
             this.colonButton.UseVisualStyleBackColor = true;
+            this.colonButton.Click += new System.EventHandler(this.colonButton_Click);
             // 
             // extractButton
             // 
@@ -151,6 +154,7 @@ namespace Calculator.Properties.Forms
             this.extractButton.TabIndex = 16;
             this.extractButton.Text = "-";
             this.extractButton.UseVisualStyleBackColor = true;
+            this.extractButton.Click += new System.EventHandler(this.processButtonClick);
             // 
             // buttonKey3
             // 
@@ -163,6 +167,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey3.TabIndex = 15;
             this.buttonKey3.Text = "3";
             this.buttonKey3.UseVisualStyleBackColor = true;
+            this.buttonKey3.Click += new System.EventHandler(this.buttonKey3_Click);
             // 
             // buttonKey2
             // 
@@ -175,6 +180,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey2.TabIndex = 14;
             this.buttonKey2.Text = "2";
             this.buttonKey2.UseVisualStyleBackColor = true;
+            this.buttonKey2.Click += new System.EventHandler(this.buttonKey2_Click);
             // 
             // buttonKey1
             // 
@@ -187,6 +193,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey1.TabIndex = 13;
             this.buttonKey1.Text = "1";
             this.buttonKey1.UseVisualStyleBackColor = true;
+            this.buttonKey1.Click += new System.EventHandler(this.buttonKey1_Click);
             // 
             // multipleButton
             // 
@@ -199,6 +206,7 @@ namespace Calculator.Properties.Forms
             this.multipleButton.TabIndex = 12;
             this.multipleButton.Text = "x";
             this.multipleButton.UseVisualStyleBackColor = true;
+            this.multipleButton.Click += new System.EventHandler(this.processButtonClick);
             // 
             // buttonKey6
             // 
@@ -211,6 +219,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey6.TabIndex = 11;
             this.buttonKey6.Text = "6";
             this.buttonKey6.UseVisualStyleBackColor = true;
+            this.buttonKey6.Click += new System.EventHandler(this.buttonKey6_Click);
             // 
             // buttonKey5
             // 
@@ -223,6 +232,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey5.TabIndex = 10;
             this.buttonKey5.Text = "5";
             this.buttonKey5.UseVisualStyleBackColor = true;
+            this.buttonKey5.Click += new System.EventHandler(this.buttonKey5_Click);
             // 
             // buttonKey4
             // 
@@ -235,6 +245,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey4.TabIndex = 9;
             this.buttonKey4.Text = "4";
             this.buttonKey4.UseVisualStyleBackColor = true;
+            this.buttonKey4.Click += new System.EventHandler(this.buttonKey4_Click);
             // 
             // divisionButton
             // 
@@ -247,6 +258,7 @@ namespace Calculator.Properties.Forms
             this.divisionButton.TabIndex = 8;
             this.divisionButton.Text = "/";
             this.divisionButton.UseVisualStyleBackColor = true;
+            this.divisionButton.Click += new System.EventHandler(this.processButtonClick);
             // 
             // buttonKey9
             // 
@@ -259,6 +271,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey9.TabIndex = 7;
             this.buttonKey9.Text = "9";
             this.buttonKey9.UseVisualStyleBackColor = true;
+            this.buttonKey9.Click += new System.EventHandler(this.buttonKey9_Click);
             // 
             // buttonKey8
             // 
@@ -271,6 +284,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey8.TabIndex = 6;
             this.buttonKey8.Text = "8";
             this.buttonKey8.UseVisualStyleBackColor = true;
+            this.buttonKey8.Click += new System.EventHandler(this.buttonKey8_Click);
             // 
             // buttonKey7
             // 
@@ -283,6 +297,7 @@ namespace Calculator.Properties.Forms
             this.buttonKey7.TabIndex = 5;
             this.buttonKey7.Text = "7";
             this.buttonKey7.UseVisualStyleBackColor = true;
+            this.buttonKey7.Click += new System.EventHandler(this.buttonKey7_Click);
             // 
             // deleteButton
             // 
@@ -295,6 +310,7 @@ namespace Calculator.Properties.Forms
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "DEL_TEXT";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // clearButton
             // 
@@ -307,6 +323,7 @@ namespace Calculator.Properties.Forms
             this.clearButton.TabIndex = 3;
             this.clearButton.Text = "C";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // percentButton
             // 
@@ -319,6 +336,7 @@ namespace Calculator.Properties.Forms
             this.percentButton.TabIndex = 2;
             this.percentButton.Text = "%";
             this.percentButton.UseVisualStyleBackColor = true;
+            this.percentButton.Click += new System.EventHandler(this.processButtonClick);
             // 
             // negPosButton
             // 
@@ -331,6 +349,7 @@ namespace Calculator.Properties.Forms
             this.negPosButton.TabIndex = 1;
             this.negPosButton.Text = "-/+";
             this.negPosButton.UseVisualStyleBackColor = true;
+            this.negPosButton.Click += new System.EventHandler(this.negPosButton_Click);
             // 
             // CalculatorPage1
             // 
@@ -341,6 +360,7 @@ namespace Calculator.Properties.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CalculatorPage1";
             this.Text = "CalculatorPage1";
+            this.Load += new System.EventHandler(this.CalculatorPage1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
