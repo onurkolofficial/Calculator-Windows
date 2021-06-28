@@ -61,6 +61,15 @@ namespace Calculator.Properties.Locales {
         }
         
         /// <summary>
+        ///   Show application infos. benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        public static string about_app_summary {
+            get {
+                return ResourceManager.GetString("about_app_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   About App benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         public static string about_app_text {
@@ -75,6 +84,15 @@ namespace Calculator.Properties.Locales {
         public static string app_name {
             get {
                 return ResourceManager.GetString("app_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Contact : benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        public static string contact_text {
+            get {
+                return ResourceManager.GetString("contact_text", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace Calculator.Properties.Locales {
         public static string settings_text {
             get {
                 return ResourceManager.GetString("settings_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Version benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        public static string version_text {
+            get {
+                return ResourceManager.GetString("version_text", resourceCulture);
             }
         }
     }

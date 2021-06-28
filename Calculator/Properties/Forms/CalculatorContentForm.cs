@@ -28,6 +28,11 @@ namespace Calculator.Properties.Forms
             valueText.Click += new EventHandler(Form1.checkNavigationIsShowingHandler);
         }
 
+        private void CalculatorContentForm_Load(object sender, EventArgs e){
+            // Show Ads
+            bannerAds1.ShowAd(320, 50, "av94q66j9zgc");
+        }
+
         private void CalculatorContentForm_Click(object sender, EventArgs e){
             // Check Navigation Menu
             Form1.checkNavigationIsShowingHandler(sender, e);
@@ -77,6 +82,8 @@ namespace Calculator.Properties.Forms
             if (e.KeyCode == Keys.Enter)
                 CalculatorPage1.equalsButtonClick(sender, e);
         }
+
+        
 
         private void getCalculatorButtonPage(){
             // Get Calculator Buttons

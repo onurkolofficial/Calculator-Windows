@@ -12,6 +12,7 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        private Form thisForm;
         // Variables
         public static Boolean showNavigationStart = false;
         // Scroll Form Variables
@@ -33,6 +34,7 @@ namespace Calculator
         // Forms
         public static Properties.Forms.CalculatorContentForm calculatorMain = new Properties.Forms.CalculatorContentForm();
         public static Properties.Forms.SettingsForm settingsPage = new Properties.Forms.SettingsForm();
+        public static Properties.Forms.Settings.AboutForm settingsAboutPage = new Properties.Forms.Settings.AboutForm();
 
         // Resources
         public static ComponentResourceManager langResource = new ComponentResourceManager(typeof(Properties.Locales.Language));
@@ -57,41 +59,45 @@ namespace Calculator
             // Hide Navigation
             navigationPanel.Visible = false;
             // Init App
-            getMainPage();
-        }
+            invalidatePage(settingsPage, calculatorMain, 0);
 
-        private void Form1_Load(object sender, EventArgs e){
-            // Focus Control
+            // Focus Input
             ActiveControl = calculatorMain.valueTextPublic;
         }
 
-        // Get Calculator Main Page
-        public static void getMainPage(){
-            calculatorMain.TopLevel = false;
-            // Remove Another Control
-            appContentPanelStatic.Controls.Remove(settingsPage);
-            // Added form in panel.
-            appContentPanelStatic.Controls.Add(calculatorMain);
-            // Set Dock 'Fill'
-            calculatorMain.Dock = DockStyle.Fill;
-            // Show Button Forms
-            calculatorMain.Show();
-            // Init Main Page Toolbar
-            setToolbarMode(0);
+        private void Form1_Load(object sender, EventArgs e){
+            // Set Current Form
+            thisForm = calculatorMain;
+            // Focus Control
+            ActiveControl = calculatorMain.valueTextPublic;
         }
-        // Get Setting Page
-        private void getSettingsPage(){
-            settingsPage.TopLevel = false;
-            // Remove Main Control
-            appContentPanel.Controls.Remove(calculatorMain);
+        
+        public static void invalidatePage(Form currentPage, Form startPage, int toolbarMode){
+            startPage.TopLevel = false;
+            // Remove Control
+            appContentPanelStatic.Controls.Remove(currentPage);
             // Added form in panel.
-            appContentPanel.Controls.Add(settingsPage);
+            appContentPanelStatic.Controls.Add(startPage);
             // Set Dock 'Fill'
-            settingsPage.Dock = DockStyle.Fill;
-            // Show Button Forms
-            settingsPage.Show();
+            startPage.Dock = DockStyle.Fill;
+            // Show/Hide Forms
+            currentPage.Hide();
+            startPage.Show();
             // Init Settings Page Toolbar
-            setToolbarMode(1);
+            setToolbarMode(toolbarMode);
+        }
+        public static void invalidatePage(Form startPage, int toolbarMode){
+            startPage.TopLevel = false;
+            // Remove Control
+            appContentPanelStatic.Controls.Clear(); //<BUG> Crashing to Drawer Menu
+            // Added form in panel.
+            appContentPanelStatic.Controls.Add(startPage);
+            // Set Dock 'Fill'
+            startPage.Dock = DockStyle.Fill;
+            // Show Button Forms
+            startPage.Show();
+            // Init Settings Page Toolbar
+            setToolbarMode(toolbarMode);
         }
 
         private void toolbarScrollMouseDown(object sender, MouseEventArgs e){
@@ -116,6 +122,21 @@ namespace Calculator
                 toolbarMenuButtonStatic.Visible = false;
                 // Set Toolbar Title
                 toolbarTitleStatic.Text = langResource.GetString("settings_text");
+                // Button Click Events
+                toolbarBackButtonStatic.Click += delegate { settingsPage.onMenuBackPressed(); };
+                // View
+                settingsPage.BringToFront();
+            }
+            else if (mode == 2){
+                // Main Page
+                toolbarBackButtonStatic.Visible = true;
+                toolbarMenuButtonStatic.Visible = false;
+                // Set Toolbar Title
+                toolbarTitleStatic.Text = langResource.GetString("about_app_text");
+                // Button Click Events
+                toolbarBackButtonStatic.Click += delegate { settingsAboutPage.onMenuBackPressed(); };
+                // View
+                settingsAboutPage.BringToFront();
             }
         }
 
@@ -155,7 +176,7 @@ namespace Calculator
 
         private void settingsButton_Click(object sender, EventArgs e){
             // Open Settings
-            getSettingsPage();
+            invalidatePage(thisForm, settingsPage, 1);
             // Dismiss Navigation
             checkNavigationIsShowingHandler(sender, e);
         }

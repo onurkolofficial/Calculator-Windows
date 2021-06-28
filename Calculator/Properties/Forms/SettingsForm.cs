@@ -12,24 +12,25 @@ namespace Calculator.Properties.Forms
 {
     public partial class SettingsForm : Form
     {
-
-        public int testval;
+        private Form thisForm;
         public SettingsForm(){
             InitializeComponent();
         }
-
         private void SettingsForm_Load(object sender, EventArgs e){
-            initToolbarButtons();
+            // Set Current Form
+            thisForm = Form1.settingsPage;
+            // Set Button Text
+            aboutFormButton.Text = Form1.langResource.GetString("about_app_text") + 
+                Environment.NewLine + Form1.langResource.GetString("about_app_summary");
         }
 
-        private void initToolbarButtons(){
-            // Button Clicks
-            Form1.toolbarBackButtonStatic.Click += new EventHandler(closeSettingsClick);
+        public void onMenuBackPressed(){
+            Form1.invalidatePage(thisForm, Form1.calculatorMain, 0);
         }
-
-        private void closeSettingsClick(object sender, EventArgs e){
-            Form1.getMainPage();
+       
+        private void aboutFormButton_Click(object sender, EventArgs e){
+            // Open About Page
+            Form1.invalidatePage(thisForm, Form1.settingsAboutPage, 2);
         }
-
     }
 }

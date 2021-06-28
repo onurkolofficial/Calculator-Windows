@@ -33,6 +33,7 @@ namespace Calculator.Properties.Forms
             this.historyText = new System.Windows.Forms.TextBox();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.calcButtonPanel = new System.Windows.Forms.Panel();
+            this.bannerAds1 = new AdsJumboWinForm.BannerAds();
             this.inputPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@ namespace Calculator.Properties.Forms
             this.inputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.inputPanel.Location = new System.Drawing.Point(0, 0);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(350, 100);
+            this.inputPanel.Size = new System.Drawing.Size(350, 94);
             this.inputPanel.TabIndex = 5;
             // 
             // calcButtonPanel
@@ -84,17 +85,32 @@ namespace Calculator.Properties.Forms
             this.calcButtonPanel.Size = new System.Drawing.Size(350, 310);
             this.calcButtonPanel.TabIndex = 4;
             // 
+            // bannerAds1
+            // 
+            this.bannerAds1.ApplicationId = null;
+            this.bannerAds1.BackColor = System.Drawing.Color.White;
+            this.bannerAds1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bannerAds1.HeightAd = 0;
+            this.bannerAds1.Location = new System.Drawing.Point(0, 94);
+            this.bannerAds1.Margin = new System.Windows.Forms.Padding(4);
+            this.bannerAds1.Name = "bannerAds1";
+            this.bannerAds1.Size = new System.Drawing.Size(350, 50);
+            this.bannerAds1.TabIndex = 6;
+            this.bannerAds1.WidthAd = 0;
+            // 
             // CalculatorContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(350, 454);
+            this.Controls.Add(this.bannerAds1);
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.calcButtonPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CalculatorContentForm";
             this.Text = "CalculatorContentForm";
+            this.Load += new System.EventHandler(this.CalculatorContentForm_Load);
             this.Click += new System.EventHandler(this.CalculatorContentForm_Click);
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
@@ -108,5 +124,6 @@ namespace Calculator.Properties.Forms
         private System.Windows.Forms.TextBox historyText;
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.Panel calcButtonPanel;
+        private AdsJumboWinForm.BannerAds bannerAds1;
     }
 }

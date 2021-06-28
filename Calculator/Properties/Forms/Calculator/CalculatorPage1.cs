@@ -92,6 +92,8 @@ namespace Calculator.Properties.Forms
             }
             else
                 PROCESS_RESET_COLON = true;
+            // Check Navigation Menu
+            Form1.checkNavigationIsShowingHandler(sender, e);
         }
 
         private void colonButton_Click(object sender, EventArgs e){
@@ -108,7 +110,6 @@ namespace Calculator.Properties.Forms
             }
         }
 
-        int k = 0;
         private void negPosButton_Click(object sender, EventArgs e){
             // Get String
             String valueText = getValueTextBox.Text;
@@ -119,20 +120,17 @@ namespace Calculator.Properties.Forms
 
                 String val = "";
                 int i = 0;
-                while (matcher.Success)
-                {
+                while (matcher.Success){
                     // Get Value
                     val = matcher.Groups[1].Value;
                     matcher = matcher.NextMatch();
                     i++;
                 }
-
                 // Find Match
                 if (valueText.Contains("-"+val))
                     getValueTextBox.Text = valueText.Replace("-"+val, val);
                 else
                     getValueTextBox.Text = valueText.Replace(val, "-"+val);
-
                 // Set Selection
                 getValueTextBox.SelectionStart = getValueTextBox.TextLength;
             }
@@ -148,6 +146,8 @@ namespace Calculator.Properties.Forms
             // Print Values
             getValueTextBox.Text = value;
             geHistoryTextBox.Text = expressString;
+            // Check Navigation Menu
+            Form1.checkNavigationIsShowingHandler(sender, e);
         }
 
         private void processButtonClick(object sender, EventArgs e){

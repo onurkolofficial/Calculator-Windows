@@ -29,35 +29,42 @@ namespace Calculator.Properties.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.aboutFormButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // aboutFormButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.aboutFormButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aboutFormButton.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.aboutFormButton.Image = global::Calculator.Properties.AppResources.app_about_light;
+            this.aboutFormButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aboutFormButton.Location = new System.Drawing.Point(0, 0);
+            this.aboutFormButton.Name = "aboutFormButton";
+            this.aboutFormButton.Size = new System.Drawing.Size(350, 50);
+            this.aboutFormButton.TabIndex = 0;
+            this.aboutFormButton.Text = "ABOUT_TEXT";
+            this.aboutFormButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aboutFormButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.aboutFormButton.UseVisualStyleBackColor = true;
+            this.aboutFormButton.Click += new System.EventHandler(this.aboutFormButton_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(350, 454);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.aboutFormButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button aboutFormButton;
     }
 }
