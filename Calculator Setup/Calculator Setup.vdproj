@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_080242BFB00D4E6CAE896C59C7FF1DF9"
+        "MsmKey" = "8:_36C0471FE91445C2B6FEBD0109779B5E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,6 +82,29 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.CoreRuntime.3.1.x64"
+                    {
+                    "Name" = "8:.NET Core Çalışma Zamanı 3.1.16 (x64)"
+                    "ProductCode" = "8:Microsoft.NetCore.CoreRuntime.3.1.x64"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.CoreRuntime.3.1.x86"
+                    {
+                    "Name" = "8:.NET Core Çalışma Zamanı 3.1.16 (x86)"
+                    "ProductCode" = "8:Microsoft.NetCore.CoreRuntime.3.1.x86"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.DesktopRuntime.3.1.x64"
+                    {
+                    "Name" = "8:.NET Core Masaüstü Çalışma Zamanı 3.1.16 (x64)"
+                    "ProductCode" = "8:Microsoft.NetCore.DesktopRuntime.3.1.x64"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.DesktopRuntime.3.1.x86"
+                    {
+                    "Name" = "8:.NET Core Masaüstü Çalışma Zamanı 3.1.16 (x86)"
+                    "ProductCode" = "8:Microsoft.NetCore.DesktopRuntime.3.1.x86"
+                    }
+                }
             }
         }
     }
@@ -109,6 +132,14 @@
                 "IsNETCore" = "11:TRUE"
                 "Architecture" = "2:0"
                 "Runtime" = "2:0"
+                }
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_F909B3A860D14F488061DD6B16980C6F"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "FrameworkVersion" = "8:ANY"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
                 }
             }
         }
@@ -142,7 +173,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_4CD03716DFDF44658EA10BB3FC9091BB"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -191,7 +222,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Calculator"
         "ProductCode" = "8:{A897E700-48B8-44C9-AEDF-61470626CE73}"
-        "PackageCode" = "8:{61893FBC-3260-462A-AA28-BB96A61AC1B0}"
+        "PackageCode" = "8:{806BCE69-4163-4F00-8DD0-19908C992D63}"
         "UpgradeCode" = "8:{CB99447A-ACD8-4644-9FA5-0BE5856D810D}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -311,15 +342,29 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_848F8C996C344E6B921C19FC3ADB4861"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E823CEDFA18349A28D2339221C519CAB"
             {
             "Name" = "8:Calculator"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:Calculator app for Windows."
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_080242BFB00D4E6CAE896C59C7FF1DF9"
+            "Target" = "8:_36C0471FE91445C2B6FEBD0109779B5E"
+            "Folder" = "8:_8657480548094CEE84437B1B94F57B23"
+            "WorkingFolder" = "8:_4CD03716DFDF44658EA10BB3FC9091BB"
+            "Icon" = "8:_3E01637226764FE7988CA35B7E370E75"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F2F62B78912B4F8DA9F5C0FA25D5E299"
+            {
+            "Name" = "8:Calculator"
+            "Arguments" = "8:"
+            "Description" = "8:Calculator app for Windows."
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_36C0471FE91445C2B6FEBD0109779B5E"
             "Folder" = "8:_C7A64B8BBF7F4B3680D66334196ADE72"
             "WorkingFolder" = "8:_4CD03716DFDF44658EA10BB3FC9091BB"
             "Icon" = "8:_3E01637226764FE7988CA35B7E370E75"
@@ -724,9 +769,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_080242BFB00D4E6CAE896C59C7FF1DF9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_36C0471FE91445C2B6FEBD0109779B5E"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\netcoreapp3.1\\Calculator.dll"
+            "SourcePath" = "8:..\\Calculator\\obj\\Release\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4CD03716DFDF44658EA10BB3FC9091BB"
@@ -745,7 +790,35 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
+            "OutputGroupCanonicalName" = "8:PublishItemsOutputGroup"
+            "OutputProjectGuid" = "8:{8D473690-C78B-4121-8CF4-9ADB68BB87A8}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9C5D3B4A987640E0953F345C4744CDA5"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_4CD03716DFDF44658EA10BB3FC9091BB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:SatelliteDllsProjectOutputGroup"
             "OutputProjectGuid" = "8:{8D473690-C78B-4121-8CF4-9ADB68BB87A8}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

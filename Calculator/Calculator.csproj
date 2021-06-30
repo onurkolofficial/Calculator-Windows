@@ -7,7 +7,7 @@
     <ApplicationIcon>app_icon.ico</ApplicationIcon>
     <Authors>Onur Kol</Authors>
     <Copyright>Onur Kol</Copyright>
-    <Description>Calculator Application for Windows.</Description>
+    <Description>Calculator application for Windows.</Description>
   </PropertyGroup>
 
   <ItemGroup>
