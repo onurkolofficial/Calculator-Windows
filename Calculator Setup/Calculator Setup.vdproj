@@ -75,6 +75,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -181,7 +189,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Calculator Setup"
+        "ProductName" = "8:Calculator"
         "ProductCode" = "8:{A897E700-48B8-44C9-AEDF-61470626CE73}"
         "PackageCode" = "8:{61893FBC-3260-462A-AA28-BB96A61AC1B0}"
         "UpgradeCode" = "8:{CB99447A-ACD8-4644-9FA5-0BE5856D810D}"
@@ -194,7 +202,7 @@
         "Manufacturer" = "8:Onur Kol"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Calculator Setup"
+        "Title" = "8:Calculator Installer"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Onur Kol"
         "Keywords" = "8:"
